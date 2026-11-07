@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@500;700;900&display=swap">
 <style>
-/* Layout: one long page. A red sun sets behind the company name; below the horizon, the business it runs, the company record, and how to reach it.
+/* Layout: one long page. The stencil logo opens it; below, the business it runs, the company record, and how to reach it.
    Same type system as thecityofangles.com (one heavy sans, uppercase labels); red replaces the amber. */
 :root{
   --bg:#100a09; --ink:#f3ece4; --muted:#9e918a; --rule:#2b201e; --red:#e23b2c; --card:#1a1211;
@@ -39,18 +39,22 @@ img{display:block;max-width:100%;height:auto}
 
 /* Header */
 .mast{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
-.logo{font-weight:900;font-size:clamp(17px,2.2vw,22px);letter-spacing:.02em;text-decoration:none}
+.logo{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:clamp(17px,2.2vw,22px);letter-spacing:.02em;text-decoration:none}
 .logo:hover{color:var(--red)}
+.logo svg{width:24px;height:24px;flex:none}
+.logo .b{fill:var(--ink)}
 .pill{display:inline-flex;align-items:center;padding:9px 16px;border:1.5px solid var(--red);border-radius:999px;color:var(--red);text-decoration:none;font-weight:700;font-size:12px;letter-spacing:.18em;text-transform:uppercase;transition:background .2s,color .2s}
 .pill:hover{background:var(--red);color:#100a09}
 
-/* Hero: the sun sits behind the name and is cut by the horizon rule */
+/* Hero: stencil logo beside the one-line description */
 .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--rule)}
-.hero .wrap{position:relative;z-index:1;padding-block:clamp(64px,13vw,170px) clamp(28px,4vw,44px)}
-.sun{position:absolute;z-index:0;right:clamp(-120px,-4vw,-20px);bottom:0;width:clamp(260px,52vw,640px);aspect-ratio:1;max-width:100%;transform:translateY(46%);border-radius:50%;background:var(--red);box-shadow:0 0 140px 30px rgba(226,59,44,.22);animation:rise 1.6s cubic-bezier(.2,.7,.2,1) both}
-@keyframes rise{from{transform:translateY(60%)}to{transform:translateY(46%)}}
-.hero h1{margin:14px 0 0;font-weight:900;font-size:clamp(52px,11.5vw,156px);line-height:.88;letter-spacing:-.015em;text-wrap:balance}
-.hero p.sub{margin:clamp(22px,3vw,34px) 0 0;max-width:34ch;font-size:clamp(17px,1.8vw,21px);font-weight:500;line-height:1.4}
+.hero .wrap{padding-block:clamp(48px,9vw,120px) clamp(36px,5vw,64px)}
+.hero .wrap{display:grid;grid-template-columns:auto minmax(0,1fr);align-items:end;gap:clamp(28px,6vw,96px)}
+@media (max-width:640px){.hero .wrap{grid-template-columns:1fr}}
+.hero h1{margin:0;line-height:0}
+.mark{display:block;width:clamp(210px,34vw,420px);height:auto;color:var(--ink);animation:in 1s cubic-bezier(.2,.7,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero p.sub{margin:16px 0 0;max-width:34ch;font-size:clamp(17px,1.8vw,21px);font-weight:500;line-height:1.4}
 .hero p.sub b{font-weight:900;letter-spacing:.01em}
 
 /* Sections */
@@ -109,17 +113,18 @@ footer a:hover{color:var(--red)}
 </head>
 <body>
 <header class="wrap mast">
-  <a class="logo" href="#top">RED SON LTD.</a>
+  <a class="logo" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="b" cx="25" cy="39" r="19"/><circle cx="39" cy="25" r="19" fill="var(--red)"/></svg>RED SON LTD.</a>
   <a class="pill" href="#contact">Contact</a>
 </header>
 
 <main id="top">
   <section class="hero" aria-labelledby="name">
-    <div class="sun" aria-hidden="true"></div>
     <div class="wrap">
-      <p class="label">Red Son Ltd. Liability Co.</p>
-      <h1 id="name">RED SON LTD.</h1>
-      <p class="sub">The company behind <b>THE CITY of ANGLEs</b>: photography, camera rentals and image licensing. Seattle, Washington.</p>
+      <h1 id="name"><svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 330 330" class="mark" role="img" aria-label="RED SON LTD."><g fill="currentColor"><rect x="0" y="0" width="26" height="100"/><path d="M34 0H72A26 26 0 0 1 72 52H34Z"/><path d="M34 60H62L100 100H34Z"/><rect x="110" y="0" width="26" height="100"/><rect x="144" y="0" width="66" height="26"/><rect x="144" y="37" width="50" height="26"/><rect x="144" y="74" width="66" height="26"/><rect x="220" y="0" width="26" height="100"/><path d="M254 0H270A50 50 0 0 1 270 100H254Z"/><g transform="translate(0 220)"><rect x="0" y="0" width="32" height="62"/><rect x="0" y="70" width="90" height="30"/><rect x="58" y="0" width="104" height="30"/><rect x="98" y="38" width="32" height="62"/><rect x="170" y="0" width="30" height="100"/><path d="M208 0H220A50 50 0 0 1 220 100H208Z"/><circle cx="290" cy="88" r="17"/></g></g><g fill="var(--red)"><g transform="translate(0 110)"><path transform="translate(-3 -6)" d="M62.4 3.6A48 48 0 0 0 37.6 96.4Z"/><path transform="translate(3 6)" d="M62.4 3.6A48 48 0 0 1 37.6 96.4Z"/><path d="M156 2A48 48 0 0 0 156 98Z"/><path d="M164 2A48 48 0 0 1 164 98Z"/><rect x="220" y="0" width="26" height="100"/><path d="M254 0H290L320 48V100H300L254 26Z"/><path d="M300 0H320V32Z"/></g><circle cx="300" cy="298" r="17"/></g></svg></h1>
+      <div>
+        <p class="label">Red Son Ltd. Liability Co.</p>
+        <p class="sub">The company behind <b>THE CITY of ANGLEs</b>: photography, camera rentals and image licensing. Seattle, Washington.</p>
+      </div>
     </div>
   </section>
 
