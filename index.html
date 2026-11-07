@@ -71,6 +71,7 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--r
 @media (max-width:460px){.lines li{grid-template-columns:1fr;gap:4px}}
 .go{align-self:start;display:inline-flex;gap:10px;align-items:center;font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;color:var(--ink);border-bottom:2px solid var(--red);padding-bottom:4px}
 .go:hover{color:var(--red)}
+.gos{display:flex;flex-wrap:wrap;gap:16px 28px}
 
 /* Rentals: ShareGrid profile facts on the left, booking link on the right */
 .rent{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:clamp(22px,4vw,56px);align-items:start}
@@ -133,9 +134,12 @@ footer a:hover{color:var(--red)}
           <ul class="lines">
             <li><span>Photography</span><span>Events, stages, and the people in them. Photography by André O. Graves.</span></li>
             <li><span>Camera rentals</span><span>Camera bodies and lenses, rented through <a href="#rentals">ShareGrid</a>.</span></li>
-            <li><span>Image licensing</span><span>Stock photography licensed through Getty Images and iStock.</span></li>
+            <li><span>Image licensing</span><span>Stock photography licensed through Getty Images and <a href="https://www.istockphoto.com/portfolio/TheCityofAngles?mediatype=photography" target="_blank" rel="noopener">iStock</a>.</span></li>
           </ul>
-          <a class="go" href="https://thecityofangles.com/">Visit thecityofangles.com <span aria-hidden="true">→</span></a>
+          <div class="gos">
+            <a class="go" href="https://thecityofangles.com/">Visit thecityofangles.com <span aria-hidden="true">→</span></a>
+            <a class="go" href="https://www.istockphoto.com/portfolio/TheCityofAngles?mediatype=photography" target="_blank" rel="noopener">License on iStock <span aria-hidden="true">→</span></a>
+          </div>
         </div>
       </div>
     </div>
@@ -192,7 +196,7 @@ footer a:hover{color:var(--red)}
 
 <footer class="wrap">
   <span>© Red Son Ltd. Liability Co.</span>
-  <span><a href="https://thecityofangles.com/">THE CITY of ANGLEs</a> · <a href="https://www.sharegrid.com/p/andre_graves" target="_blank" rel="noopener">ShareGrid</a></span>
+  <span><a href="https://thecityofangles.com/">THE CITY of ANGLEs</a> · <a href="https://www.sharegrid.com/p/andre_graves" target="_blank" rel="noopener">ShareGrid</a> · <a href="https://www.istockphoto.com/portfolio/TheCityofAngles?mediatype=photography" target="_blank" rel="noopener">iStock</a></span>
 </footer>
 </body>
 </html>
