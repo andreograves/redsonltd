@@ -38,7 +38,11 @@ img{display:block;max-width:100%;height:auto}
 .label{margin:0;font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
 
 /* Header */
-.mast{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px}
+.mast{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 16px;padding-block:20px}
+/* Title sits on the right, the contact button on the left; DOM order stays title-first for screen readers */
+.mast .logo{order:2;margin-left:auto}
+@media (max-width:420px){.mast .pill{padding:8px 12px;font-size:11px;letter-spacing:.1em}.mast .logo{font-size:16px;gap:8px}.mast .logo svg{width:20px;height:20px}}
+@media (max-width:360px){.mast{gap:8px}.mast .pill{padding:7px 10px;font-size:10px;letter-spacing:.05em}.mast .logo{font-size:14px;gap:6px}.mast .logo svg{width:16px;height:16px}}
 .logo{display:inline-flex;align-items:center;gap:10px;font-weight:900;font-size:clamp(17px,2.2vw,22px);letter-spacing:.02em;text-decoration:none}
 .logo:hover{color:var(--red)}
 .logo svg{width:24px;height:24px;flex:none}
@@ -131,7 +135,7 @@ footer a:hover{color:var(--red)}
 <body>
 <header class="wrap mast">
   <a class="logo" href="#top"><svg viewBox="0 0 64 64" aria-hidden="true"><circle class="b" cx="25" cy="39" r="19"/><circle cx="39" cy="25" r="19" fill="var(--red)"/></svg>RED SON LTD.</a>
-  <a class="pill" href="#contact">Contact</a>
+  <a class="pill" href="#contact">Contact Red Son Ltd.</a>
 </header>
 
 <main id="top">
