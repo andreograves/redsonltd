@@ -137,6 +137,31 @@ footer a:hover{color:var(--red)}
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://redsonltd.com/img/link-preview-20261108.jpg">
 <meta name="twitter:image:alt" content="Red Son Ltd. logo above a rising red sun">
+<!-- Visitor stats (GoatCounter, redsonltd). Counts only on the live domain, once per page. -->
+<script>
+(function () {
+  if (!/(^|\.)(redsonltd\.com)$/.test(location.hostname)) return;
+  var queue = [], last = null;
+  function path() {
+    return location.pathname; // one-page site: in-page #links only scroll, so they are not counted as pages
+  }
+  function hit() {
+    var p = path(); if (p === last) return; last = p;
+    var send = function () { window.goatcounter.count({ path: p, title: document.title }); };
+    if (window.goatcounter && window.goatcounter.count) send(); else queue.push(send);
+  }
+  var s = document.createElement('script');
+  s.async = true; s.src = 'https://gc.zgo.at/count.js';
+  s.setAttribute('data-goatcounter', 'https://redsonltd.goatcounter.com/count');
+  s.setAttribute('data-goatcounter-settings', '{"no_onload": true}');
+  s.onload = function () { queue.splice(0).forEach(function (fn) { fn(); }); };
+  document.head.appendChild(s);
+  addEventListener('hashchange', hit); addEventListener('popstate', hit);
+  var push = history.pushState;
+  history.pushState = function () { var r = push.apply(this, arguments); setTimeout(hit, 0); return r; };
+  if (document.readyState === 'loading') addEventListener('DOMContentLoaded', function () { setTimeout(hit, 0); }); else hit();
+})();
+</script>
 </head>
 <body>
 <header class="wrap mast">
